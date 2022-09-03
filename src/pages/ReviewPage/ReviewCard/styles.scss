@@ -1,0 +1,33 @@
+.review-card {
+  background-color: white;
+  width: 300px;
+  height: 250px;
+  margin-bottom: 80px;
+  box-shadow: 0px 5px 5px grey;
+
+  .card-padding {
+    padding: 18px
+  }
+
+  .place {
+    color: black;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .rating-wrapper {
+    margin-left: -2px;
+    font-size: 30px;
+
+    .rating {
+      display: inline;
+      color: #FBCD33;
+    }
+  
+    .empty-rating {
+      color: gray;
+      opacity: .3;
+      display: inline;
+    }
+  }
+}

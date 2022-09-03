@@ -14,3 +14,5 @@
 ## Testing
 
 - To run tests use the command `npm test`.
+
+## Future Enhancements
