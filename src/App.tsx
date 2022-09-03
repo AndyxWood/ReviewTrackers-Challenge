@@ -1,19 +1,24 @@
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, useRoutes } from 'react-router-dom';
 import { NotFoundPage } from './pages/common/NotFoundPage';
 import { ReviewPage } from './pages/ReviewPage';
 import './themes/App.css';
+
+const AppRoutes = () => {
+  const routes = useRoutes([
+    { path: '/', element: <ReviewPage />},
+    { path: '/reviews', element: <ReviewPage />},
+    { path: '*', element: <NotFoundPage />},
+  ]);
+  return routes;
+};
 
 const App = () => {
   return (
     <>
       <div className="App">
-        <Routes>
-          <Route path='/' element={<ReviewPage />} />
-          <Route path='/reviews' element={<ReviewPage />} />
-          <Route path='*'>
-            <NotFoundPage />
-          </Route>
-        </Routes>
+        <Router>
+          <AppRoutes />
+        </Router>
       </div>
     </>
   );
