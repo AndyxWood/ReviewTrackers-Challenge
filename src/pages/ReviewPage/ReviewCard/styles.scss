@@ -1,12 +1,14 @@
 .review-card {
+  display: flex;
+  flex-direction: column;
   background-color: white;
   width: 300px;
   height: 250px;
-  margin-bottom: 80px;
+  margin-bottom: 100px;
   box-shadow: 0px 5px 5px grey;
-
+  
   .card-padding {
-    padding: 18px
+    padding: 18px;
   }
 
   .place {
@@ -30,4 +32,38 @@
       display: inline;
     }
   }
+
+  .content {
+    padding-top: 10px;
+    max-height: 50px;
+    max-width: 220px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    color: #5D6167;
+  }
+
+  .card-footer-wrapper {
+    margin-top: 90px;
+    display: flex;
+    justify-content: space-between;
+
+    .author {
+      display: inline;
+      font-size: 14px;
+      font-weight: 500;
+      color: black;
+    }
+  
+    .published-date {
+      display: inline;
+      color: #8D95A3;
+    }
+
+    .comment-icon {
+      display: inline;
+    }
+  }
+
 }
