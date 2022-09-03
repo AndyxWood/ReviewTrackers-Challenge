@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, useRoutes } from 'react-router-dom';
 import { NotFoundPage } from './pages/common/NotFoundPage';
 import { ReviewPage } from './pages/ReviewPage';
-import './themes/App.css';
 
 const AppRoutes = () => {
   const routes = useRoutes([

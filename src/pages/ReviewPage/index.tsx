@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react';
 import Header from '../../components/Header';
+import './styles.scss';
 
 export const ReviewPage: FunctionComponent = () => {
   // TODO:
@@ -9,7 +10,9 @@ export const ReviewPage: FunctionComponent = () => {
   return (
     <>
       <Header headerTitle='Reviews' />
-      <div className='reviews-body'> {/* cards */} </div>
+      <div className='reviews-body'>cards list</div>
     </>
   );
 };
+
+export default ReviewPage;

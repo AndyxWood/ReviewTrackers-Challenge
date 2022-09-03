@@ -1,9 +1,19 @@
 .header-wrapper {
   height: 60px;
-  color: #0057B3;
+  background-color: #0057B3;
 
-  .header-text {
-    color: white;
-    size: 24px;
+  .header-text-wrapper {
+    padding-left: 1.5in;
+    padding-right: 1.5in;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    
+    .header-text {
+      color: white;
+      font-size: 24px;
+      font-weight: 700;
+    }
   }
 }
