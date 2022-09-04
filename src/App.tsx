@@ -8,22 +8,28 @@ import { NotFoundPage } from './pages/common/NotFoundPage';
 import ReviewDetails from './pages/ReviewDetails';
 import { ReviewsList } from './pages/ReviewsList';
 
-const App = () => {
+export const App = () => {
   return (
     <>
-      <div className="App">
-        <Router>
-          <Routes>
-            <Route path="/" element={<Navigate to="reviews" replace />} />
-            <Route path="/reviews" element={<ReviewsList />}>
-              <Route path=":reviewId" element={<ReviewDetails />} />
-            </Route>
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </Router>
-      </div>
+      <Routes>
+        <Route path="/" element={<Navigate to="reviews" replace />} />
+        <Route path="/reviews" element={<ReviewsList />}>
+          <Route path=":reviewId" element={<ReviewDetails />} />
+        </Route>
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </>
   );
 };
 
-export default App;
+const AppWrapper = () => {
+  return (
+    <div className="App">
+      <Router>
+        <App />
+      </Router>
+    </div>
+  );
+};
+
+export default AppWrapper;
