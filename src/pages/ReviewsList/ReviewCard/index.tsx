@@ -32,7 +32,6 @@ export const ReviewCard: FunctionComponent<ReviewCardPropsModel> = ({
         <div className='published-date'>{format(new Date(published_at), 'MM/dd/yyyy')}</div>
         <img src={commentIcon} className='comment-icon' alt='comment-button' /> 
         {/* TODO: Add on click and go to new view */}
-        {/* TODO: Make this page responsive and put cards horizontally */}
       </div>
     </div>
   </div>;

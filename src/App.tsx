@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, useRoutes } from 'react-router-dom';
 import { NotFoundPage } from './pages/common/NotFoundPage';
-import { ReviewPage } from './pages/ReviewPage';
+import { ReviewsList } from './pages/ReviewsList';
 
 const AppRoutes = () => {
   const routes = useRoutes([
-    { path: '/', element: <ReviewPage />},
-    { path: '/reviews', element: <ReviewPage />},
+    { path: '/', element: <ReviewsList />},
+    { path: '/reviews', element: <ReviewsList />},
     { path: '*', element: <NotFoundPage />},
   ]);
   return routes;
