@@ -19,24 +19,6 @@ interface CommentCardPropsModel {
   review: ReviewsModel;
 }
 
-const CommentContent: FunctionComponent<ReviewCommentModel> = ({
-  content,
-  author,
-  date,
-}: ReviewCommentModel) => {
-  return (
-    <>
-      <div className="comment-text">{content}</div>
-      <div className="card-footer">
-        <div className="comment-author">{author}</div>
-        <div className="comment-date">
-          {date && format(new Date(date), 'MM/dd/yyyy')}
-        </div>
-      </div>
-    </>
-  );
-};
-
 export const CommentCard: FunctionComponent<CommentCardPropsModel> = ({
   comment,
   review,
@@ -61,25 +43,32 @@ export const CommentCard: FunctionComponent<CommentCardPropsModel> = ({
             setEditContent={(bool) => setEditContent(bool)}
           />
         ) : (
-          <CommentContent
-            content={comment?.content}
-            author={comment?.author || 'Unknown'}
-            date={comment?.date}
-          />
+          <>
+            <div className="card-header-wrapper">
+              <div className="comment-text">{comment?.content}</div>
+              {!editContent && (
+                <div className="menu-icon">
+                  <Tooltip title="Edit Comment" enterDelay={700}>
+                    <img
+                      src={menuIcon}
+                      alt="menu-icon"
+                      onClick={() => setEditContent(true)}
+                    />
+                  </Tooltip>
+                </div>
+              )}
+            </div>
+            <div className="card-footer">
+              <div className="comment-author">
+                {comment?.author || 'Unknown'}
+              </div>
+              <div className="comment-date">
+                {comment?.date && format(new Date(comment?.date), 'MM/dd/yyyy')}
+              </div>
+            </div>
+          </>
         )}
       </div>
-
-      {!editContent && (
-        <div className="menu-icon">
-          <Tooltip title="Edit Comment" enterDelay={700}>
-            <img
-              src={menuIcon}
-              alt="menu-icon"
-              onClick={() => setEditContent(true)}
-            />
-          </Tooltip>
-        </div>
-      )}
     </div>
   );
 };

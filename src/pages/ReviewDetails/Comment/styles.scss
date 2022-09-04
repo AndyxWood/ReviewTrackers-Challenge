@@ -12,6 +12,11 @@
     display: none; /* Safari and Chrome */
   }
 
+  .card-header-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .card-padding {
     width: 100%;
     padding: 26px;
@@ -29,8 +34,9 @@
   }
 
   .menu-icon {
-    margin-right: 26px;
-    margin-top: 22px;
+    margin-right: -26px;
+    margin-top: -2px;
+    display: inline;
     :hover {
       opacity: 0.8;
       cursor: pointer;
@@ -38,6 +44,7 @@
   }
 
   .comment-text {
+    display: inline;
     font-size: 18px;
     max-width: 90%;
     word-wrap: break-word;
@@ -68,12 +75,8 @@
   }
 
   @media (max-width: 575px) {
-    .card-padding {
-      padding-right: 0px;
-    }
-
     .menu-icon {
-      margin-left: -16px;
+      margin-right: 0px;
     }
   }
 }
