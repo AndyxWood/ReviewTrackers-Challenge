@@ -1,25 +1,36 @@
-import { FunctionComponent } from 'react';
-import Header from '../../components/Header';
+import { FunctionComponent, useEffect, useState } from 'react';
 import './styles.scss';
-import reviews from '../../resources/reviews.json';
 import ReviewCard from '../../components/ReviewCard';
+import { ReviewsModel, useReviewContext } from '../ReviewsList';
+
+
 
 export const ReviewDetails: FunctionComponent = () => {
+  const {reviews, setReviews, reviewId} = useReviewContext();
+  const [review, setReview] = useState<ReviewsModel | null>(null);
+
+  useEffect(() => {
+    if (reviews && reviewId && !review) {
+      const currentReview = reviews.find(rev => rev.id === reviewId);
+      if (currentReview) setReview(currentReview);
+    }
+  }, [reviews, reviewId]);
+
   return (
     <>
-      <Header headerTitle="Review Details" />
-      <div className="reviews-body">
-        {reviews.map((review) => (
-          <ReviewCard
-            key={review.id}
-            id={review.id}
-            author={review.author}
-            place={review.place}
-            published_at={review.published_at}
-            rating={review.rating}
-            content={review.content}
-          />
-        ))}
+      <div className='review-details-body'>
+        {review && <ReviewCard
+          key={review.id}
+          id={review.id}
+          author={review.author}
+          place={review.place}
+          published_at={review.published_at}
+          rating={review.rating}
+          content={review.content}
+          detailsView
+          className='details'
+        /> }
+        {/* comment component */}
       </div>
     </>
   );

@@ -1,22 +1,20 @@
-import { BrowserRouter as Router, useRoutes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { NotFoundPage } from './pages/common/NotFoundPage';
+import ReviewDetails from './pages/ReviewDetails';
 import { ReviewsList } from './pages/ReviewsList';
-
-const AppRoutes = () => {
-  const routes = useRoutes([
-    { path: '/', element: <ReviewsList />},
-    { path: '/reviews', element: <ReviewsList />},
-    { path: '*', element: <NotFoundPage />},
-  ]);
-  return routes;
-};
 
 const App = () => {
   return (
     <>
       <div className="App">
         <Router>
-          <AppRoutes />
+          <Routes>
+            <Route path='/' element={<Navigate to='reviews' replace/>} />
+            <Route path='/reviews' element={<ReviewsList />} >
+              <Route path=':reviewId' element={<ReviewDetails />} />
+            </Route>
+            <Route path='*' element={<NotFoundPage />} />
+          </Routes>
         </Router>
       </div>
     </>

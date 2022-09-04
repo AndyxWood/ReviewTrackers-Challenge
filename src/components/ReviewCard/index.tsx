@@ -14,6 +14,7 @@ export interface ReviewCardPropsModel {
   content: string;
   detailsView?: boolean;
   className?: string;
+  comment?: string;
 }
 
 export const ReviewCard: FunctionComponent<ReviewCardPropsModel> = ({
