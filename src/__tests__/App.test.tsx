@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter, MemoryRouter } from 'react-router-dom';
-import userEvent from '@testing-library/user-event';
 import {App} from '../App';
 
 test('app rendering and navigating', () => {

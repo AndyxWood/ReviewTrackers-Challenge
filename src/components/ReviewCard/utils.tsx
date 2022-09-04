@@ -4,7 +4,7 @@ export const convertRating = (rating: number): JSX.Element => {
   const fiveStars = '★★★★★';
 
   if (rating < 1 || rating > 5 || typeof rating !== 'number')
-    return <div className="empty-rating">{fiveStars}</div>;
+    return <div data-testid='0/5-stars' className="empty-rating">{fiveStars}</div>;
 
   const star = '★';
   let response = '';
