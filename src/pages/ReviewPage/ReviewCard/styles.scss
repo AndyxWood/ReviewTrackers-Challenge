@@ -4,7 +4,7 @@
   background-color: white;
   width: 300px;
   height: 250px;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
   box-shadow: 0px 5px 5px grey;
   
   .card-padding {
@@ -59,6 +59,7 @@
     .published-date {
       display: inline;
       color: #8D95A3;
+      font-size: 14px;
     }
 
     .comment-icon {

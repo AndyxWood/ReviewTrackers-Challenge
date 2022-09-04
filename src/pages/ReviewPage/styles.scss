@@ -2,4 +2,31 @@
   padding-left: 1.25in;
   padding-right: 1.25in;
   margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; //sets a minimum gap between components (in all directions)
+}
+
+@media (max-width: 800px) {
+  .reviews-body {
+    flex-direction: column;
+    padding-left: 1in;
+  }
+}
+
+// These sizes can be visualized in chrome by opening the inspector and moving it to the right or left side
+@media (max-width: 499px) {
+  .reviews-body {
+    flex-direction: column;
+    padding-left: .5in;
+  }
+}
+
+@media (max-width: 410px) {
+  .reviews-body {
+    flex-direction: column;
+    padding-left: 0in;
+  }
 }

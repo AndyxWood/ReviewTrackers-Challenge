@@ -2,9 +2,9 @@
   height: 60px;
   background-color: #0057B3;
 
+  padding-left: 1.25in;
+  padding-right: 1.25in;
   .header-text-wrapper {
-    padding-left: 1.25in;
-    padding-right: 1.25in;
     height: 60px;
     display: flex;
     align-items: center;
@@ -15,5 +15,24 @@
       font-size: 24px;
       font-weight: 700;
     }
+  }
+}
+
+@media (max-width: 800px) {
+  .header-wrapper {
+    padding-left: 1in;
+  }
+}
+
+// These sizes can be visualized in chrome by opening the inspector and moving it to the right or left side
+@media (max-width: 499px) {
+  .header-wrapper {
+    padding-left: .5in;
+  }
+}
+
+@media (max-width: 410px) {
+  .header-wrapper {
+    padding-left: 1in;
   }
 }
