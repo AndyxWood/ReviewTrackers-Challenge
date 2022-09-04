@@ -5,7 +5,10 @@ import reviewData from '../../resources/reviews.json';
 import ReviewCard, { ReviewCardPropsModel } from '../../components/ReviewCard';
 import { Outlet, useOutletContext, useParams } from 'react-router-dom';
 
-export type ReviewsModel = Omit<ReviewCardPropsModel, 'detailsView' | 'className'>;
+export type ReviewsModel = Omit<
+  ReviewCardPropsModel,
+  'detailsView' | 'className'
+>;
 
 interface ReviewDetailsContextModel {
   reviews: ReviewsModel[];
@@ -13,19 +16,22 @@ interface ReviewDetailsContextModel {
   reviewId: string;
 }
 
-export function useReviewContext () {
+export function useReviewContext() {
   return useOutletContext<ReviewDetailsContextModel>();
 }
 
 export const ReviewsList: FunctionComponent = () => {
-  const {reviewId} = useParams();
+  const { reviewId } = useParams();
   const [reviews, setReviews] = useState<ReviewsModel[]>(reviewData);
 
   return (
     <>
       <Header headerTitle={reviewId ? 'Review Details' : 'Reviews'} />
-      { reviewId ? 
-        <Outlet context={{reviews, setReviews, reviewId: reviewId.split('=')[1]}}/> :
+      {reviewId ? (
+        <Outlet
+          context={{ reviews, setReviews, reviewId: reviewId.split('=')[1] }}
+        />
+      ) : (
         <div className="reviews-body">
           {reviews.map((review: ReviewsModel) => (
             <ReviewCard
@@ -38,7 +44,8 @@ export const ReviewsList: FunctionComponent = () => {
               content={review.content}
             />
           ))}
-        </div>}
+        </div>
+      )}
     </>
   );
 };

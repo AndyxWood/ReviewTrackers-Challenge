@@ -1,6 +1,6 @@
 .header-wrapper {
   height: 60px;
-  background-color: #0057B3;
+  background-color: #0057b3;
 
   padding-left: 1.25in;
   padding-right: 1.25in;
@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    
+
     .header-text {
       color: white;
       font-size: 24px;
@@ -27,7 +27,7 @@
 // These sizes can be visualized in chrome by opening the inspector and moving it to the right or left side
 @media (max-width: 499px) {
   .header-wrapper {
-    padding-left: .5in;
+    padding-left: 0.5in;
   }
 }
 

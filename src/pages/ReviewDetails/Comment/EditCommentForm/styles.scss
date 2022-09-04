@@ -1,0 +1,19 @@
+.form-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  padding-top: 16px;
+  justify-content: right;
+}
+
+@media (max-width: 800px) {
+  .form-wrapper {
+    flex-direction: column;
+  }
+}
