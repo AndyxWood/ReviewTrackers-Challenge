@@ -4,10 +4,10 @@ import './styles.scss';
 import reviews from '../../resources/reviews.json';
 import ReviewCard from '../../components/ReviewCard';
 
-export const ReviewsList: FunctionComponent = () => {
+export const ReviewDetails: FunctionComponent = () => {
   return (
     <>
-      <Header headerTitle="Reviews" />
+      <Header headerTitle="Review Details" />
       <div className="reviews-body">
         {reviews.map((review) => (
           <ReviewCard
@@ -25,4 +25,4 @@ export const ReviewsList: FunctionComponent = () => {
   );
 };
 
-export default ReviewsList;
+export default ReviewDetails;

@@ -64,6 +64,13 @@
 
     .comment-icon {
       display: inline;
+      border: none;
+      background-color: white;
+
+      :hover {
+        cursor: pointer;
+        opacity: .5;
+      }
     }
   }
 

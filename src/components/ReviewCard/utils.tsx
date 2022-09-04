@@ -21,6 +21,3 @@ export const convertRating = (rating: number): JSX.Element => {
     </div>
   );
 };
-
-// This could potentially be moved to a shared component
-// I'll consider that premature optimization since there's not currently another component utilizing this utility
